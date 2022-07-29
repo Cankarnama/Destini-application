@@ -28,6 +28,7 @@ class _StoryPageState extends State<StoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        // 1.this is where the image was added
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('images/purple.jpg'),
@@ -59,7 +60,9 @@ class _StoryPageState extends State<StoryPage> {
                   onPressed: () {
                     //Choice 1 made by user.
                     //TODO: Step 18 - Call the nextStory() method from storyBrain and pass the number 1 as the choice made by the user.
-                    storyb.nextStory(2 );
+                    setState(() {
+                      storyb.nextStory(1);
+                    });
                   },
                   color: Colors.red,
                   child: Text(
@@ -82,7 +85,9 @@ class _StoryPageState extends State<StoryPage> {
                   onPressed: () {
                     //Choice 2 made by user.
                     //TODO: Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
-                    storyb.nextStory(1);
+                    setState(() {
+                      storyb.nextStory(2);
+                    });
                   },
                   color: Colors.blue,
                   child: Text(
